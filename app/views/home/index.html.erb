@@ -1,5 +1,7 @@
 <ul>
 <% @latest_restaurants.each do |r| %>
-  <li><%= r.name %></li>
+  <li><%= link_to r.name, restaurant_path(r) %></li>
 <% end %>
+<li></li>
+<li><%= link_to "See All", restaurants_path %></li>
 </ul>
