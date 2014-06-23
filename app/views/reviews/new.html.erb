@@ -1,0 +1,10 @@
+<%= form_for [@restaurant, @review] do |f| %>
+
+    <%= f.label "Rating" %>:
+    <%= f.text_field :rating %>
+
+    <%= f.label "Body" %>:
+    <%= f.text_area :body %>
+
+    <%= f.submit %>
+  <% end %>
