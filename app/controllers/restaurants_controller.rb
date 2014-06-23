@@ -7,10 +7,15 @@ class RestaurantsController < ActionController::Base
     @restaurants = Restaurant.all.order("name")
   end
 
+  def show
+    @r = Restaurant.find(params[:id])
+    @reviews = @r.reviews
+  end
+
   def create
     Restaurant.create(restaurant_params)
 
-    redirect_to "/restaurants"
+    redirect_to restaurants_path
   end
 
   def new

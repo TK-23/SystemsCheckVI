@@ -1,0 +1,16 @@
+<h1><%= @r.name %></h1>
+
+<h3><%= @r.category %></h3>
+<span><%= "#{@r.address}"%><br><%= "#{@r.city},#{@r.state} #{@r.zipcode}" %></span>
+
+<h4>About</h4>
+  <%= @r.description %>
+
+<h4>Reviews</h4>
+<ul>
+  <% @reviews.each do |r| %>
+    <li><%= "#{r.rating} #{r.body}" %></li>
+  <% end %>
+</ul>
+
+
