@@ -8,10 +8,22 @@ class RestaurantsController < ActionController::Base
   end
 
   def create
+    Restaurant.create(restaurant_params)
 
+    redirect_to "/restaurants"
   end
 
   def new
+    @restaurant = Restaurant.new
+  end
+
+  private
+
+  def restaurant_params
+    # this method will return a hash like this:
+    # { title: "whatever title", author: "some person", body: "blah blah blah" }
+    params.require(:restaurant).permit(:name,:address,:city, :state, :zipcode,:description, :category)
+
   end
 
 end

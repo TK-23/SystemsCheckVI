@@ -1,1 +1,25 @@
-HI
+<%= form_for @restaurant do |f| %>
+
+    <%= f.label "Name" %>:
+    <%= f.text_field :name %>
+
+    <%= f.label "Address" %>:
+    <%= f.text_field :address %>
+
+    <%= f.label "City" %>:
+    <%= f.text_field :city %>
+
+    <%= f.label "State" %>:
+    <%= f.text_field :state %>
+
+    <%= f.label "Zip Code" %>:
+    <%= f.text_field :zipcode %><br>
+
+    <%= f.label "Description" %>:
+    <%= f.text_area :description,:rows => 10, :cols => 85 %><br>
+
+    <%= f.label "Category" %>:
+    <%= f.text_field :category %>
+
+    <%= f.submit %>
+  <% end %>
